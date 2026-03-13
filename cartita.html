@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti miamor ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, #ffdbe8 0%, transparent 25%),
+        radial-gradient(circle at top right, #ffe7c7 0%, transparent 20%),
+        radial-gradient(circle at bottom left, #f7d8ff 0%, transparent 20%),
+        linear-gradient(135deg, #fff7fb, #fffdf8, #fff3f6);
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #5d3a4b;
+      position: relative;
+    }
+
+    .floating {
+      position: fixed;
+      font-size: 28px;
+      opacity: 0.22;
+      animation: floatY 6s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .f1 { top: 30px; left: 25px; animation-delay: 0s; }
+    .f2 { top: 90px; right: 40px; animation-delay: 1.5s; }
+    .f3 { top: 260px; left: 50px; animation-delay: 2.2s; }
+    .f4 { bottom: 90px; right: 35px; animation-delay: 3s; }
+    .f5 { bottom: 30px; left: 30px; animation-delay: 1s; }
+    .f6 { top: 55%; right: 10px; animation-delay: 2.7s; }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(4deg); }
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 30px 16px 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .letter {
+      width: 100%;
+      max-width: 850px;
+      background: rgba(255,255,255,0.78);
+      border: 2px solid rgba(231, 182, 202, 0.65);
+      border-radius: 28px;
+      box-shadow: 0 14px 40px rgba(163, 107, 132, 0.18);
+      backdrop-filter: blur(6px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .top-decor {
+      background: linear-gradient(135deg, #f8d7e6, #fff0d7, #f0d9ff);
+      padding: 28px 20px 18px;
+      text-align: center;
+      border-bottom: 1px solid rgba(204, 146, 170, 0.3);
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.65);
+      color: #8d5370;
+      border: 1px solid rgba(204, 146, 170, 0.4);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.1rem;
+      color: #8b4d68;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #9a6a7f;
+    }
+
+    .flowers-line {
+      margin-top: 14px;
+      font-size: 1.5rem;
+      letter-spacing: 8px;
+    }
+
+    .content {
+      padding: 28px 22px 34px;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .photo-card {
+      background: #fffafc;
+      border: 1px solid rgba(219, 173, 193, 0.45);
+      border-radius: 22px;
+      padding: 12px;
+      box-shadow: 0 8px 18px rgba(190, 135, 160, 0.12);
+      text-align: center;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+      border: 4px solid #fff;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .photo-caption {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #9a6a7f;
+      font-style: italic;
+    }
+
+    .message {
+      background: linear-gradient(180deg, rgba(255,250,252,0.95), rgba(255,247,240,0.95));
+      border: 1px solid rgba(219, 173, 193, 0.4);
+      border-radius: 24px;
+      padding: 24px 20px;
+      line-height: 1.9;
+      font-size: 1.08rem;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+      position: relative;
+    }
+
+    .message::before,
+    .message::after {
+      content: "🪷";
+      position: absolute;
+      font-size: 26px;
+      opacity: 0.45;
+    }
+
+    .message::before {
+      top: 14px;
+      right: 16px;
+    }
+
+    .message::after {
+      bottom: 14px;
+      left: 16px;
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #8b4d68;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 0 22px 28px;
+      color: #b07b92;
+      font-size: 0.96rem;
+    }
+
+    .heart {
+      display: inline-block;
+      animation: beat 1.2s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.08); }
+      50% { transform: scale(1.18); }
+      75% { transform: scale(1.08); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .photo-card img {
+        height: 250px;
+      }
+
+      .message {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating f1">🌷</div>
+  <div class="floating f2">🪷</div>
+  <div class="floating f3">🌸</div>
+  <div class="floating f4">🌷</div>
+  <div class="floating f5">🪷</div>
+  <div class="floating f6">🌸</div>
+
+  <div class="wrapper">
+    <div class="letter">
+      <div class="top-decor">
+        <div class="tag">Una cartita secreta para ti amor mioo</div>
+        <h1>Para mi mujer preciosa <span class="heart">❤️</span></h1>
+        <div class="subtitle">Escaneaste este QR… y llegaste directo a mi corazon de pollo</div>
+        <div class="flowers-line">🌷 🪷 🌸 🌷 🪷</div>
+      </div>
+
+      <div class="content">
+        <div class="photos">
+          <div class="photo-card">
+            <img src="foto1.jpg" alt="Nuestra foto 1">
+            <div class="photo-caption">❤️❤️❤️tu y yo juntitos miamor❤️❤️❤️</div>
+          </div>
+
+          <div class="photo-card">
+            <img src="foto2.jpeg" alt="Nuestra foto 2">
+            <div class="photo-caption">❤️❤️❤️siempre te amo amorcito❤️❤️❤️</div>
+          </div>
+        </div>
+
+        <div class="message">
+          Mi amor,
+
+          <br><br>
+          Quise hacerte algo diferente, algo que tuviera un pedacito de mi y también de lo mucho que significas para mí
+          Por eso esta vez no quise darte solo un mensaje, sino una pequeña cartita hecha con cariño, pensada especialmente para ti
+
+          <br><br>
+          Entre todos mis días, tú eres esa parte bonita que siempre quiero conservar
+          Eres ternura, calma, alegría y también ese motivo inesperado que hace que todo se sienta más especial
+
+          <br><br>
+          Gracias por existir, por tu forma de ser, por tus detalles, por tu sonrisa y por todo lo que haces sentir en mi corazon
+          A tu lado, siempre me haces sentir mejor y ser mejor persona miamor
+
+          <br><br>
+          Hoy solo quiero recordarte algo:
+          me encantas muchísimo, admiro la persona que eres y me haces muy feliz
+
+          <br><br>
+          Espero que esta cartita te saque una sonrisa, porque tú a mí me haces muy pero muy feliz
+
+          <div class="signature">
+            Con mucho amor,<br>
+            Tu novio Kevin💌
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Hecho con amor y cariño miamor ✨
+      </div>
+    </div>
+  </div>
+</body>
+</html>
